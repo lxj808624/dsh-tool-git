@@ -72,11 +72,11 @@ dsh plugin --profile web add github:you/dsh-tool-git   # 或: add ./dsh-tool-git
 
 ## 开发
 
-前置条件：Node.js ≥ 22.19、pnpm，以及一个相邻的 `deepseek-harness` checkout（类型检查通过项目引用使用其类型）。
+前置条件：Node.js ≥ 22.19 和 pnpm。项目完全自包含——所有 `@deepseek-ai/*` 类型来自 devDependencies 中安装的公开 API（0.0.1-rc.5 线），**不需要** `deepseek-harness` checkout。
 
 ```sh
 pnpm install
-pnpm run typecheck   # 针对公开 @deepseek-ai/* API（rc.5 线）做 tsc 检查
+pnpm run typecheck   # 针对公开 @deepseek-ai/* API 做 tsc 检查
 pnpm test            # vitest：启动插件，在临时仓库中执行真实 git
 pnpm run build       # tsc 声明 + tsdown 打包（lib/index.mjs）
 ```
