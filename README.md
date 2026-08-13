@@ -93,12 +93,13 @@ All options are optional; the defaults are shown below:
 
 ## Development
 
-Prerequisites: Node.js ≥ 22.19, pnpm, and a sibling checkout of
-`deepseek-harness` (for TypeScript types via project references).
+Prerequisites: Node.js ≥ 22.19 and pnpm. The project is self-contained — all
+`@deepseek-ai/*` types resolve from the published public API (0.0.1-rc.5 line)
+installed as devDependencies, so no `deepseek-harness` checkout is required.
 
 ```sh
 pnpm install
-pnpm run typecheck   # tsc against the public @deepseek-ai/* API (rc.5 line)
+pnpm run typecheck   # tsc against the public @deepseek-ai/* API
 pnpm test            # vitest: boots the plugin, runs real git in temp repos
 pnpm run build       # tsc declarations + tsdown bundle (lib/index.mjs)
 ```
