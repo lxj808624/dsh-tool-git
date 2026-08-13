@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: set this to true or false
+# The @deepseek-ai 0.0.1-rc.5 public API line was published days ago; pnpm 11's
+# supply-chain minimum-release-age gate would otherwise reject these lockfile
+# entries on fresh installs (e.g. CI). Relax the age gate for this plugin repo.
+minimumReleaseAge: 0

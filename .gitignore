@@ -5,8 +5,7 @@ lib/
 *.tsbuildinfo
 .dsh-home/
 
-# pnpm 11 auto-generated workspace noise and stray tsc test artifacts
-pnpm-workspace.yaml
+# stray tsc test artifacts
 tests/*.js
 tests/*.d.ts
 tests/*.map
