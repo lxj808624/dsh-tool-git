@@ -1,0 +1,12 @@
+node_modules/
+.pnpm-store/
+.npm-cache/
+lib/
+*.tsbuildinfo
+.dsh-home/
+
+# pnpm 11 auto-generated workspace noise and stray tsc test artifacts
+pnpm-workspace.yaml
+tests/*.js
+tests/*.d.ts
+tests/*.map

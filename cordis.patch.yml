@@ -1,0 +1,4 @@
+# dsh-tool-git bundle layer: insert the plugin row when this bundle is active.
+- insert:
+    - id: tool-git
+      name: dsh-tool-git
