@@ -83,6 +83,11 @@ const PATTERNS: Pattern[] = [
     description: 'rebase rewrites commit history',
   },
   {
+    id: 'pull-rebase',
+    re: /\bgit(?:\.exe)?\s+pull\b[^|\n;]*?--rebase\b/i,
+    description: 'pull --rebase rewrites local commits on top of the fetched branch',
+  },
+  {
     id: 'checkout-discard',
     re: /\bgit(?:\.exe)?\s+checkout\b[^|\n;]*?--\b/i,
     description: 'git checkout -- discards working tree changes',

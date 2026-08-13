@@ -5,9 +5,13 @@
 
 import type { Context } from '@deepseek-ai/cordis'
 import { defineBranchTool } from './branch.ts'
+import { defineCheckoutTool } from './checkout.ts'
 import { defineCommitTool } from './commit.ts'
 import { defineDiffTool, type DiffToolOptions } from './diff.ts'
+import { defineFetchTool } from './fetch.ts'
 import { defineLogTool, type LogToolOptions } from './log.ts'
+import { definePullTool } from './pull.ts'
+import { defineRemoteTool } from './remote.ts'
 import { defineShowTool, type ShowToolOptions } from './show.ts'
 import { defineStageTool } from './stage.ts'
 import { defineStashTool } from './stash.ts'
@@ -37,6 +41,10 @@ export function registerGitTools(ctx: Context, config: ToolsConfig): void {
     defineCommitTool(options),
     defineStashTool(options),
     defineShowTool(showOptions),
+    defineFetchTool(options),
+    definePullTool(options),
+    defineRemoteTool(options),
+    defineCheckoutTool(options),
   ]
   for (const definition of definitions) {
     ctx.tools.register(definition)

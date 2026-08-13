@@ -28,6 +28,10 @@ whether the model calls them through these tools **or** through a shell tool.
 | `git_commit` | Create a commit with a message; returns hash and statistics |
 | `git_stash` | `list` / `push` / `pop` stashes, with conflict-safe pop |
 | `git_show` | One commit: metadata, per-file stats, optional patch |
+| `git_fetch` | Download refs from a remote without touching the worktree |
+| `git_pull` | Fast-forward-only by default; reports `not-fast-forward` / `conflict` outcomes |
+| `git_remote` | List configured remotes with fetch/push URLs |
+| `git_checkout` | Switch branches, or create and switch (`-b`); never discards changes |
 
 Every tool accepts an optional `repoDir` argument and reports the resolved
 repository root in its result.
@@ -42,9 +46,10 @@ The gate listens on `tools/pre-execute` and inspects every tool call:
   invocations such as:
 
   `push --force` / `--force-with-lease` · `push --delete` · `reset --hard` ·
-  `clean -f` · `branch -d/-D` · `tag -d` · `rebase` · `commit --amend` ·
-  `checkout --` / `checkout .` / `checkout -f` · `switch -f` ·
-  `restore` (discarding worktree) · `rm -r` · `update-ref -d` · `filter-branch`
+  `clean -f` · `branch -d/-D` · `tag -d` · `rebase` · `pull --rebase` ·
+  `commit --amend` · `checkout --` / `checkout .` / `checkout -f` ·
+  `switch -f` · `restore` (discarding worktree) · `rm -r` ·
+  `update-ref -d` · `filter-branch`
 
   Pattern matching is per-command: it never crosses `|`, `;`, or newline
   boundaries, so `git add . && git push --force` is still caught but innocent
