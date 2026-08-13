@@ -66,9 +66,9 @@ describe('dsh-tool-git destructive-command gate', () => {
       repo = makeTempRepo()
       const ctx = await boot()
       registerFakeBash(ctx)
-      for (const command of ['git rebase main', 'git commit --amend -m x']) {
+      for (const command of ['git rebase main', 'git commit --amend -m x', 'git pull --rebase']) {
         const result = await callTool(ctx, 'bash', { command })
-        expect(result.isError).toBe(true)
+        expect(result.isError, `expected blocked: ${command}`).toBe(true)
       }
     })
 

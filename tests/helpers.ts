@@ -44,6 +44,36 @@ export function makeTempRepo(): TempRepo {
   }
 }
 
+/** Create a disposable bare repository usable as a remote. */
+export function makeBareRepo(): { dir: string; cleanup: () => void; git: (args: string[]) => string } {
+  const dir = mkdtempSync(join(tmpdir(), 'dsh-tool-git-bare-'))
+  const git = (args: string[]): string =>
+    execFileSync('git', args, { cwd: dir, encoding: 'utf8', stdio: 'pipe' })
+  git(['init', '--bare', '-b', 'main'])
+  return {
+    dir,
+    cleanup: () => rmSync(dir, { recursive: true, force: true }),
+    git,
+  }
+}
+
+/** Clone a repository into a fresh disposable working repo. */
+export function makeClone(sourceDir: string): TempRepo {
+  const dir = mkdtempSync(join(tmpdir(), 'dsh-tool-git-clone-'))
+  execFileSync('git', ['clone', sourceDir, dir], { encoding: 'utf8', stdio: 'pipe' })
+  const git = (args: string[]): string =>
+    execFileSync('git', args, { cwd: dir, encoding: 'utf8', stdio: 'pipe' })
+  git(['config', 'user.name', 'Test User'])
+  git(['config', 'user.email', 'test@example.com'])
+  git(['config', 'commit.gpgsign', 'false'])
+  return {
+    dir,
+    cleanup: () => rmSync(dir, { recursive: true, force: true }),
+    git,
+    write: (relativePath, content) => writeFileSync(join(dir, relativePath), content),
+  }
+}
+
 /** Full plugin config the schemastery defaults would produce. */
 const DEFAULT_CONFIG: gitPlugin.Config = {
   workDir: process.cwd(),

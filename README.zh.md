@@ -20,6 +20,10 @@
 | `git_commit` | 用消息创建提交；返回哈希和统计 |
 | `git_stash` | `list` / `push` / `pop` 暂存，pop 冲突安全处理 |
 | `git_show` | 单次提交：元数据、逐文件统计、可选 patch |
+| `git_fetch` | 从远端下载引用，不触碰工作区 |
+| `git_pull` | 默认仅快进；`not-fast-forward` / `conflict` 结果结构化返回 |
+| `git_remote` | 列出已配置的远端（fetch/push URL） |
+| `git_checkout` | 切换分支或创建并切换（`-b`）；绝不丢弃更改 |
 
 每个工具都接受可选的 `repoDir` 参数，并在结果中返回解析后的仓库根目录。
 
@@ -31,9 +35,9 @@
 - **shell 工具** —— `bash`、`tool:bash`、`bash_persistent`、`terminal`、`tool:terminal`、`pwsh` —— 扫描其命令文本中的破坏性 git 调用，例如：
 
   `push --force` / `--force-with-lease` · `push --delete` · `reset --hard` ·
-  `clean -f` · `branch -d/-D` · `tag -d` · `rebase` · `commit --amend` ·
-  `checkout --` / `checkout .` / `checkout -f` · `switch -f` ·
-  `restore`（丢弃工作区）· `rm -r` · `update-ref -d` · `filter-branch`
+  `clean -f` · `branch -d/-D` · `tag -d` · `rebase` · `pull --rebase` ·
+  `commit --amend` · `checkout --` / `checkout .` / `checkout -f` ·
+  `switch -f` · `restore`（丢弃工作区）· `rm -r` · `update-ref -d` · `filter-branch`
 
   模式匹配按命令进行：不会跨越 `|`、`;` 或换行边界，因此 `git add . && git push --force` 仍会被拦截，而普通的复合命令不会被误判。
 
