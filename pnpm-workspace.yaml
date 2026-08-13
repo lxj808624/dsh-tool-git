@@ -1,5 +1,8 @@
+# esbuild ships a postinstall that places its platform binary; pnpm 11 blocks
+# ignored build scripts as a hard error, so allow it explicitly.
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: true
+
 # The @deepseek-ai 0.0.1-rc.5 public API line was published days ago; pnpm 11's
 # supply-chain minimum-release-age gate would otherwise reject these lockfile
 # entries on fresh installs (e.g. CI). Relax the age gate for this plugin repo.
