@@ -137,3 +137,9 @@ full pipeline (`tools/pre-execute` → dispatch → `tools/result`).
 ## License
 
 [MIT](LICENSE)
+
+## Contributors
+
+- [taonokenshin](https://github.com/taonokenshin) — found and fixed the
+  `dsh-tools` peer-resolution issue that crashed the host tool dispatcher on
+  DeepSeek Harness 0.1.0-rc.6 ([#1](https://github.com/lxj808624/dsh-tool-git/issues/1), [#2](https://github.com/lxj808624/dsh-tool-git/pull/2)).
