@@ -1,5 +1,11 @@
 # dsh-tool-git
 
+[![npm](https://img.shields.io/npm/v/dsh-tool-git?logo=npm)](https://www.npmjs.com/package/dsh-tool-git)
+[![CI](https://img.shields.io/github/actions/workflow/status/lxj808624/dsh-tool-git/ci.yml?branch=main&logo=githubactions&logoColor=white&label=CI)](https://github.com/lxj808624/dsh-tool-git/actions)
+[![License](https://img.shields.io/npm/l/dsh-tool-git)](LICENSE)
+[![awesome-deepseek-harness](https://img.shields.io/badge/awesome--deepseek--harness-listed-4D6BFE)](https://github.com/0xsline/awesome-deepseek-harness)
+[![GitHub stars](https://img.shields.io/github/stars/lxj808624/dsh-tool-git?style=social)](https://github.com/lxj808624/dsh-tool-git)
+
 Structured, safe Git tool family for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
 
 Coding agents reach for git constantly, but the stock runtime only offers raw `bash`.
