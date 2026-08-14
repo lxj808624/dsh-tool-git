@@ -78,7 +78,7 @@ dsh plugin --profile web add dsh-tool-git
 **From GitHub** (or a local checkout / tarball):
 
 ```sh
-dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.2
+dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.3
 ```
 
 Then restart `dsh --profile web`. For GitHub installs, pnpm asks you to

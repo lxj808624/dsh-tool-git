@@ -60,7 +60,7 @@ dsh plugin --profile web add dsh-tool-git
 **从 GitHub**（或本地目录 / tarball）：
 
 ```sh
-dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.2
+dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.3
 ```
 
 然后重启 `dsh --profile web`。通过 GitHub 安装时，pnpm 会要求你允许一次 `prepare` 构建脚本（参见[官方打包指南](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/develop/basic/publish.md)）。
