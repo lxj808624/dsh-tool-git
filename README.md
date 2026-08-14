@@ -63,10 +63,16 @@ configured policy, not by bypassing the gate.
 
 ## Install
 
-From a directory that contains this checkout (or a published tarball):
+**npm (recommended)** — from any directory:
 
 ```sh
-dsh plugin --profile web add github:you/dsh-tool-git   # or: add ./dsh-tool-git
+dsh plugin --profile web add dsh-tool-git
+```
+
+**From GitHub** (or a local checkout / tarball):
+
+```sh
+dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.2
 ```
 
 Then restart `dsh --profile web`. For GitHub installs, pnpm asks you to
