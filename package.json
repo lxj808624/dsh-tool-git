@@ -1,8 +1,16 @@
 {
   "name": "dsh-tool-git",
   "description": "Structured, safe Git tool family for DeepSeek Harness: status/diff/log/branch/stage/commit/stash/show/fetch/pull/remote/checkout with a destructive-command guard.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxj808624/dsh-tool-git.git"
+  },
+  "homepage": "https://github.com/lxj808624/dsh-tool-git",
+  "bugs": {
+    "url": "https://github.com/lxj808624/dsh-tool-git/issues"
+  },
   "main": "lib/index.mjs",
   "types": "lib/types/index.d.ts",
   "exports": {

@@ -45,10 +45,16 @@
 
 ## 安装
 
-在包含本仓库目录（或已发布的 tarball）的路径下执行：
+**npm（推荐）** —— 任意目录执行：
 
 ```sh
-dsh plugin --profile web add github:you/dsh-tool-git   # 或: add ./dsh-tool-git
+dsh plugin --profile web add dsh-tool-git
+```
+
+**从 GitHub**（或本地目录 / tarball）：
+
+```sh
+dsh plugin --profile web add github:lxj808624/dsh-tool-git#v0.1.2
 ```
 
 然后重启 `dsh --profile web`。通过 GitHub 安装时，pnpm 会要求你允许一次 `prepare` 构建脚本（参见[官方打包指南](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/develop/basic/publish.md)）。
