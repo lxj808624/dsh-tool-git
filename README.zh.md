@@ -1,5 +1,11 @@
 # dsh-tool-git
 
+[![npm](https://img.shields.io/npm/v/dsh-tool-git?logo=npm)](https://www.npmjs.com/package/dsh-tool-git)
+[![CI](https://img.shields.io/github/actions/workflow/status/lxj808624/dsh-tool-git/ci.yml?branch=main&logo=githubactions&logoColor=white&label=CI)](https://github.com/lxj808624/dsh-tool-git/actions)
+[![License](https://img.shields.io/npm/l/dsh-tool-git)](LICENSE)
+[![awesome-deepseek-harness](https://img.shields.io/badge/awesome--deepseek--harness-listed-4D6BFE)](https://github.com/0xsline/awesome-deepseek-harness)
+[![GitHub stars](https://img.shields.io/github/stars/lxj808624/dsh-tool-git?style=social)](https://github.com/lxj808624/dsh-tool-git)
+
 为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（`dsh`）开发的结构化、安全 Git 工具插件。
 
 编码 agent 几乎每天都在用 git，但 dsh 默认只提供裸 `bash` 命令。`dsh-tool-git` 为模型提供八个结构化工具——通过无 shell 的子进程运行器执行 `git`，返回规范的 JSON 值——并内置 `tools/pre-execute` 安全门，在破坏性 git 操作（强制推送、硬重置、rebase、amend、删除分支等）发生之前将其拦截，无论模型是通过这些工具调用，还是**通过 shell 工具**调用。
