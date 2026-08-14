@@ -107,3 +107,7 @@ pnpm run build       # tsc 声明 + tsdown 打包（lib/index.mjs）
 ## License
 
 [MIT](LICENSE)
+
+## 贡献者
+
+- [taonokenshin](https://github.com/taonokenshin) — 发现并修复了 `dsh-tools` peer 解析问题（该问题在 DeepSeek Harness 0.1.0-rc.6 下会导致宿主工具调度器崩溃，见 [#1](https://github.com/lxj808624/dsh-tool-git/issues/1) / [#2](https://github.com/lxj808624/dsh-tool-git/pull/2)）。
