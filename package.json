@@ -29,7 +29,8 @@
     "README.zh.md"
   ],
   "engines": {
-    "node": "^22.19.0 || >=24.0.0"
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.1.0-rc.6 <0.3.0-0"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json && tsdown",
